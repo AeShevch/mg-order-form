@@ -1,3 +1,107 @@
 <link rel="stylesheet" href="./dist/style.css">
 <script src="./dist/script.js"></script>
 
+<!-- Форма оформления заказа -->
+<main class="order">
+    <!-- Основная часть формы -->
+    <section class="order__section order-tabs">
+        <header class="order-tabs__header">
+            <!-- Кнопки навигации по разделам -->
+            <nav class="order-nav">
+                <ul class="order-nav__list">
+                    <li class="order-nav__item">
+                        <button class="tab-btn js-open-tab"
+                                data-tab-class="js-tab-user">
+                            <span class="tab-btn__counter">1</span>
+                            <span class="tab-btn__title">ПОКУПАТЕЛЬ</span>
+                        </button>
+                    </li>
+                    <li class="order-nav__item">
+                        <button class="tab-btn js-open-tab"
+                                data-tab-class="js-tab-delivery">
+                            <span class="tab-btn__counter">2</span>
+                            <span class="tab-btn__title">ДОСТАВКА</span>
+                        </button>
+                    </li>
+                    <li class="order-nav__item">
+                        <button class="tab-btn js-open-tab"
+                                data-tab-class="js-tab-pay">
+                            <span class="tab-btn__counter">3</span>
+                            <span class="tab-btn__title">ОПЛАТА</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Форма заказа -->
+        <form class="order-tabs__form order-form">
+            <!-- 1. Вкладка «Покупатель» -->
+            <div class="tab-content js-tab-user">
+                <div class="tab-content__inner tab-user">
+                    <div class="tab-user__form user-inputs">
+                        <label class="user-inputs__item user-field">
+                            <span class="user-field__title">Мобильный <br>телефон</span>
+                            <input class="user-field__input" type="text">
+                        </label>
+                        <label class="user-inputs__item user-field">
+                            <span class="user-field__title">ФИО <br>получателя</span>
+                            <input class="user-field__input" type="text">
+                        </label>
+                        <label class="user-inputs__item user-field">
+                            <span class="user-field__title">Электронная <br>почта</span>
+                            <input class="user-field__input" type="email">
+                        </label>
+                    </div>
+                    <!-- Кнопка перехода на слежующий таб-->
+                    <button title="Перейти в следующий раздел"
+                            class="order-form__btn js-next-step">Дальше</button>
+
+                    <!-- Соглашение об обработки персональных данных -->
+                    <div class="order-form__agreement personal-agr">
+                        <span class="personal-agr__text-content">
+                            Нажимая на кнопку вы подтверждаете, что прочитали и соглашаетесь с
+                            <button class="personal-agr__link js-open-modal"
+                                    data-modal-class="js-modal-agreement">
+                                политикой обработки персональных данных
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+    <aside class="order__aside">
+        <article class="order-cart">
+            <h2 class="order-cart__title">МОЙ ЗАКАЗ</h2>
+            <div class="order-cart__list cart-list">
+                <ul class="cart-list__ul">
+                    <li class="cart-list__item cart-item">
+                        <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
+                        <span class="cart-item__price">12345 руб.</span>
+                    </li>
+                    <li class="cart-list__item cart-item">
+                        <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
+                        <span class="cart-item__price">12345 руб.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-cart__list order-cart__list_result cart-list">
+                <ul class="cart-list__ul">
+                    <li class="cart-list__item cart-item">
+                        <span class="cart-item__name">Сумма</span>
+                        <span class="cart-item__price">12345 руб.</span>
+                    </li>
+                    <li class="cart-list__item cart-item">
+                        <span class="cart-item__name">Доставка</span>
+                        <span class="cart-item__price">12345 руб.</span>
+                    </li>
+                    <li class="cart-list__item cart-item">
+                        <strong class="cart-item__name">Итого</strong>
+                        <strong class="cart-product__price">12345 руб.</strong>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </aside>
+</main>
