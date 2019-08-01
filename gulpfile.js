@@ -7,7 +7,10 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
     browserSync = require('browser-sync').create();
-
+function reload(cb) {
+    browserSync.reload();
+    cb()
+}
 function scss() {
     return gulp.src('src/style.scss')
         .pipe(sourcemaps.init())
@@ -35,22 +38,25 @@ function clean() {
 }
 
 gulp.task('scss', scss);
-gulp.task("js", js);
+gulp.task('js', js);
+
+
 
 function watch() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: './'
         }
     });
     gulp.watch('src/style.scss', scss);
     gulp.watch('src/script.js', js);
-    gulp.watch('src/index.html', browserSync.reload())
+    gulp.watch('./index.html', reload)
 }
 
 gulp.task('watch', watch);
 
-gulp.task('build', gulp.series(clean,
+gulp.task('build', gulp.series(
+    clean,
     gulp.parallel(scss, js)
 ));
 
