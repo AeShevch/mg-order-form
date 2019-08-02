@@ -7,10 +7,7 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
     browserSync = require('browser-sync').create();
-function reload(cb) {
-    browserSync.reload();
-    cb()
-}
+
 function scss() {
     return gulp.src('src/style.scss')
         .pipe(sourcemaps.init())
@@ -40,7 +37,10 @@ function clean() {
 gulp.task('scss', scss);
 gulp.task('js', js);
 
-
+function reload(cb) {
+    browserSync.reload();
+    cb()
+}
 
 function watch() {
     browserSync.init({
