@@ -36,7 +36,7 @@
         <!-- Форма заказа -->
         <form class="order-tabs__form order-form">
             <!-- 1. Вкладка «Покупатель» -->
-            <div class="tab-content js-tab-user">
+            <div class="tab-content tab-content_active js-tab" data-tab="1">
                 <div class="tab-content__inner tab-user">
                     <div class="tab-user__form user-inputs">
                         <label class="user-inputs__item user-field">
@@ -53,7 +53,7 @@
                         </label>
                     </div>
                     <!-- Кнопка перехода на слежующий таб-->
-                    <button title="Перейти в следующий раздел"
+                    <button title="Перейти в следующий раздел" id="js-next-step"
                             class="order-form__btn js-next-step">Дальше</button>
 
                     <!-- Соглашение об обработки персональных данных -->
@@ -68,39 +68,55 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-content js-tab" data-tab="2">
+                Test test test test
+
+                <!-- Кнопка перехода на слежующий таб-->
+                <button title="Перейти в следующий раздел" id="js-next-step"
+                        class="order-form__btn js-next-step">Дальше</button>
+            </div>
+            <div class="tab-content js-tab" data-tab="3">
+                Test test test test
+
+                <!-- Кнопка перехода на слежующий таб-->
+                <button title="Перейти в следующий раздел" id="js-next-step"
+                        class="order-form__btn js-next-step">Дальше</button>
+            </div>
         </form>
 
     </section>
     <aside class="order__aside">
         <article class="order-cart">
-            <h2 class="order-cart__title">МОЙ ЗАКАЗ</h2>
-            <div class="order-cart__list cart-list">
-                <ul class="cart-list__ul">
-                    <li class="cart-list__item cart-item">
-                        <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
-                        <span class="cart-item__price">12345 руб.</span>
-                    </li>
-                    <li class="cart-list__item cart-item">
-                        <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
-                        <span class="cart-item__price">12345 руб.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="order-cart__list order-cart__list_result cart-list">
-                <ul class="cart-list__ul">
-                    <li class="cart-list__item cart-item">
-                        <span class="cart-item__name">Сумма</span>
-                        <span class="cart-item__price">12345 руб.</span>
-                    </li>
-                    <li class="cart-list__item cart-item">
-                        <span class="cart-item__name">Доставка</span>
-                        <span class="cart-item__price">12345 руб.</span>
-                    </li>
-                    <li class="cart-list__item cart-item">
-                        <strong class="cart-item__name">Итого</strong>
-                        <strong class="cart-product__price">12345 руб.</strong>
-                    </li>
-                </ul>
+            <h2 class="order-cart__title">Мой заказ</h2>
+            <div class="order-cart__inner">
+                <div class="order-cart__list cart-list">
+                    <ul class="cart-list__ul">
+                        <li class="cart-list__item cart-item">
+                            <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
+                            <span class="cart-item__price">12345 руб.</span>
+                        </li>
+                        <li class="cart-list__item cart-item">
+                            <span class="cart-item__name">Lorem ipsum dolor sit amet</span>
+                            <span class="cart-item__price">12345 руб.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-cart__list order-cart__list_result cart-list">
+                    <ul class="cart-list__ul">
+                        <li class="cart-list__item cart-item">
+                            <span class="cart-item__name">Сумма</span>
+                            <span class="cart-item__price">12345 руб.</span>
+                        </li>
+                        <li class="cart-list__item cart-item">
+                            <span class="cart-item__name">Доставка</span>
+                            <span class="cart-item__price">12345 руб.</span>
+                        </li>
+                        <li class="cart-list__item cart-item">
+                            <strong class="cart-item__name">Итого</strong>
+                            <strong class="cart-product__price">12345 руб.</strong>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </article>
     </aside>

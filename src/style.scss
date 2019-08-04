@@ -37,6 +37,11 @@ $b-radius: 4px;
     &__section {
         margin-right: 20px;
     }
+
+    &__aside {
+        display: flex;
+        align-items: flex-start;
+    }
 }
 
 .order-tabs {
@@ -50,7 +55,28 @@ $b-radius: 4px;
     background: #fffcdc;
     box-shadow: 0 1px 6px rgba(189, 194, 193, 0.6);
     border-radius: $b-radius;
-    padding: 15px;
+
+    &__inner {
+        padding: 0 15px;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 15px;
+        font-size: $titleSize;
+    }
+
+    &__inner {
+        border-top: 1px solid #f1f1f1;
+    }
+
+    &__list {
+
+        &_result {
+            border-top: 1px solid #f1f1f1;
+
+        }
+    }
 }
 
 .order-nav {
@@ -64,6 +90,7 @@ $b-radius: 4px;
     &__item {
         padding: 15px 15px 11px;
         color: $colorNoActive;
+        transition: .3s;
 
         &_active {
             font-weight: 700;
@@ -102,6 +129,9 @@ $b-radius: 4px;
 
 .order-form {
     margin: 0;
+    display: flex;
+    max-width: 500px;
+    width: 100%;
 
     &__btn {
         @include btnReset;
@@ -144,6 +174,11 @@ $b-radius: 4px;
 .tab-content {
     padding: 15px;
     border-top: 1px solid #f1f1f1;
+    position: relative;
+    transition: .8s;
+    left: 0;
+
+    flex: 0 0 100%;
 }
 
 .user-inputs {
@@ -177,5 +212,24 @@ $b-radius: 4px;
             box-shadow: 0 0 0 3px #c7eaff;
             transition-timing-function: ease-out, ease-out;
         }
+    }
+}
+
+.cart-list {
+    &__ul {
+        margin: 15px 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #333;
+
+    &__name {
+        margin-right: 10px;
     }
 }
